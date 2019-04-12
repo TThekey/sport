@@ -79,13 +79,10 @@ class ScanService
      * 与微信服务器交互
      * 拿到codeid和openid
      */
-    public static function getID(Request $request)
+    public static function getID($code)
     {
-        $code   = $request->code;      //通过code向微信服务器换取openid
-        $codeid = $request->codeid;    //传入的序列号
-
-        $AppID = 'wx32162a992ac3b89a';
-        $AppSecret = 'e471850aac54b0c8e3205b75ab9e9bfe';
+        $AppID = Config::get('appid');  //AppId
+        $AppSecret = Config::get('appsecret');  //AppSecret
         $url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$AppID.'&secret='.$AppSecret.'&code='.$code.'&grant_type=authorization_code';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
@@ -94,9 +91,6 @@ class ScanService
         $json =  curl_exec($ch);
         curl_close($ch);
         $arr=json_decode($json,1);
-
-        $arr['codeid'] = $codeid;
-        //得到 codeid 与 openid
         return $arr;
 
     }

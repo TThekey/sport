@@ -85,7 +85,7 @@ class CodeService
     {
         $codeid = self::$se_num;
         $AppID= Config::get('appid');  //appId
-        $callback  =  'http://http://www.tthekey.xyz/zerg/public/checkstr'; //回调地址
+        $callback  =  'http://www.tthekey.xyz/zerg/public/checkstr'; //回调地址
         $callback = urlencode($callback);
 
         $wxurl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=$AppID&redirect_uri=$callback&response_type=code&scope=snsapi_base&state=$codeid#wechat_redirect";

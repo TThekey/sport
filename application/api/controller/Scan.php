@@ -25,10 +25,10 @@ class Scan extends Controller
      */
     public function checkStr(Request $request)
     {
-
-        $arr = ScanService::getID();
-        $openid = $arr['openid'];      //openid
-        $codeid = $arr['codeid'];      //codeid
+        $code = $request->code;
+        $codeid = $request->codeid;         //得到codeid
+        $arr = ScanService::getID($code);   //向微信拿到openid
+        $openid = $arr['openid'];
         $string = Config::get('string');    //得到唯一字符串
         $current_mbstr = md5($codeid.$string);
 
