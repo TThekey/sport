@@ -15,5 +15,5 @@
 Route::get('getcode','api/Code/getCode');
 
 //校验序列号
-Route::get('checkstr/:openid/:codeid','api/Scan/checkStr');
+Route::get('checkstr','api/Scan/checkStr');
 
