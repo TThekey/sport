@@ -54,13 +54,13 @@ return [
     // +----------------------------------------------------------------------
 
     // 默认模块名
-    'default_module'         => 'index',
+    'default_module'         => '',
     // 禁止访问模块
     'deny_module_list'       => ['common'],
     // 默认控制器名
-    'default_controller'     => 'Index',
+    'default_controller'     => '',
     // 默认操作名
-    'default_action'         => 'index',
+    'default_action'         => '',
     // 默认验证器
     'default_validate'       => '',
     // 默认的空模块名
@@ -72,7 +72,7 @@ return [
     // 操作方法后缀
     'action_suffix'          => '',
     // 自动搜索控制器
-    'controller_auto_search' => false,
+    'controller_auto_search' => true,
 
     // +----------------------------------------------------------------------
     // | URL设置
@@ -152,5 +152,11 @@ return [
 
     // 唯一字符串
     'string'                 => 'VaHQ4kU32hOatRCYwXqA',
+
+    //appid
+    'appid'                  => 'wx32162a992ac3b89a',
+
+    //appsecret
+    'appsecret'              => 'e471850aac54b0c8e3205b75ab9e9bfe',
 
 ];

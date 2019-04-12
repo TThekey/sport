@@ -25,8 +25,10 @@ class Scan extends Controller
      */
     public function checkStr(Request $request)
     {
-        $openid = $request->openid;      //openid
-        $codeid = $request->codeid;    //传入的序列号
+
+        $arr = ScanService::getID();
+        $openid = $arr['openid'];      //openid
+        $codeid = $arr['codeid'];      //codeid
         $string = Config::get('string');    //得到唯一字符串
         $current_mbstr = md5($codeid.$string);
 
@@ -50,5 +52,6 @@ class Scan extends Controller
             return $req;
         }
     }
+
 
 }

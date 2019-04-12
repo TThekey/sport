@@ -14,9 +14,9 @@ use think\facade\Config;
 class CodeService
 {
     //序列号
-    public static $se_num;
+    private static $se_num;
     //存储路径
-    public static $pic;
+    private static $pic;
 
     /**
      * 生成二维码
@@ -32,8 +32,12 @@ class CodeService
         //生成序列号
         self::$se_num = snMaker();
 
-        //$qrData 手机扫描后要跳转的网址
-        $qrData = 'http://wx.com/api/Banner/checkStr?codeid='.self::$se_num;
+        //传给微信服务器
+        $wxurl = CodeService::createUrl();
+
+        $qrData = $wxurl;
+//        //$qrData 手机扫描后要跳转的网址
+//        $qrData = 'http://zerg.com/api/Scan/checkStr?codeid='.self::$se_num;
         // $qrLevel 默认纠错比例 分为L、M、Q、H四个等级，H代表最高纠错能力
         $qrLevel = 'H';
         //$qrSize 二维码图大小，1－10可选，数字越大图片尺寸越大
@@ -72,6 +76,20 @@ class CodeService
         //加密序列号和唯一字符串
         $mb_str = md5(self::$se_num.$string);
         return $mb_str;
+    }
+
+    /**
+     * 生成二维码跳转网址
+     */
+    public static function createUrl()
+    {
+        $codeid = self::$se_num;
+        $AppID= Config::get('appid');  //appId
+        $callback  =  'http://www.tthekey.xyz/opencode/callback.php'; //回调地址
+        $callback = urlencode($callback);
+
+        $wxurl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=$AppID&redirect_uri=$callback&response_type=code&scope=snsapi_base&state=$codeid#wechat_redirect";
+        return $wxurl;
     }
 
 }

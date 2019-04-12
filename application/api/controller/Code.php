@@ -23,4 +23,11 @@ class Code extends Controller
         return view('qrcode');
     }
 
+//    public function createUrl()
+//    {
+//        $url = CodeService::createUrl();
+//        echo $url;
+//
+//    }
+
 }
