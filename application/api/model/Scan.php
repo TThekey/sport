@@ -15,10 +15,11 @@ class Scan extends Model
     //最近一次扫码时间
     public static function findScanDate($openid,$codeid)
     {
-        self::where([
+        $scandate = self::where([
             'openid' => $openid,
             'codeid' => $codeid
         ])->order('scandate desc')->limit(1)->value('scandate');
+        return $scandate;
     }
 
     //插入scan表

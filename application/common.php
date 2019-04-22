@@ -79,3 +79,27 @@ function snMaker($pre = '')
     $serialNumber = $pre.$date.$time.$rand;
     return $serialNumber;
 }
+
+
+/**
+ * 请求微信服务器拿openid
+ */
+function curlGet($url)
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    //拿到openid
+    $json =  curl_exec($ch);
+    curl_close($ch);
+    $result = json_decode($json,1);
+    return $result;
+}
+
+
+
+
+
+
+

@@ -14,27 +14,22 @@ use think\facade\Env;
 
 class CodeService
 {
-    //序列号
-    private static $se_num;
-    //存储路径
-    private static $pic;
-
     /**
      * 生成二维码
-     * @return bool|string
+     * 存入code表
      */
     public static function getQrCode()
     {
         //$savePath 图片存储路径
         $savePath = Env::get('root_path') . 'public/qrcode/';
         //路径
-        $webPath = Env::get('root_path') . 'public/qrcode/';
+        $webPath = '/public/qrcode/';
 
         //生成序列号
-        self::$se_num = snMaker();
+        $cid = snMaker();
 
         //传给微信服务器
-        $wxurl = self::createUrl();
+        $wxurl = self::createUrl($cid);
 
         //$qrData 手机扫描后要跳转的网址
         $qrData = $wxurl;
@@ -47,17 +42,15 @@ class CodeService
         $savePrefix = 'NickBb';
         $filename = createQRcode($savePath, $qrData, $qrLevel, $qrSize, $savePrefix);
 
-        self::$pic = $webPath.$filename;
-
-
-        $mb_str = self::setSeNum();
-
-
+        //二维码路径
+        $pic = $webPath.$filename;
+        //加密序列号
+        $mb_str = self::setSeNum($cid);
 
         //存入code表
         CodeModel::create([
-            'codeid' => self::$se_num,
-            'src'    => self::$pic,
+            'codeid' => $cid,
+            'src'    => $pic,
             'mbstr'  => $mb_str
         ]);
     }
@@ -67,29 +60,28 @@ class CodeService
      * 加密序列号
      *
      */
-    public static function setSeNum()
+    public static function setSeNum($cid)
     {
         //得到唯一字符串
         $string = Config::get('extra.string');
 
         //加密序列号和唯一字符串
-        $mb_str = md5(self::$se_num.$string);
+        $mb_str = md5($cid.$string);
         return $mb_str;
     }
 
     /**
      * 生成二维码跳转网址
      */
-    public static function createUrl()
+    public static function createUrl($cid)
     {
-        $codeid = self::$se_num;
-
+        $codeid = $cid;
         //appId
         $AppID= Config::get('extra.app_id');
         //回调地址
-        $callback  =  'http://sport.jiyichuancheng.com/checkguanzhu';
+        $callback  = Config::get('extra.callback');
         $callback = urlencode($callback);
-        $wxurl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=$AppID&redirect_uri=$callback&response_type=code&scope=snsapi_base&state=$codeid#wechat_redirect";
+        $wxurl = sprintf(Config::get('extra.wx_codeurl'),$AppID,$callback,$codeid);
         return $wxurl;
     }
 

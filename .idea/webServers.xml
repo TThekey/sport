@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="165460f7-d980-4956-9ac7-671cd8b2d935" name="腾讯云" url="http://148.70.99.8">
-        <fileTransfer host="148.70.99.8" port="22" rootFolder="/web" accessType="SFTP">
+      <webServer id="165460f7-d980-4956-9ac7-671cd8b2d935" name="腾讯云" url="http://129.211.16.144">
+        <fileTransfer host="129.211.16.144" port="22" rootFolder="/web" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

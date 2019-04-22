@@ -35,7 +35,7 @@ class UserService
                 'code' => 404,
                 'time' => '',
                 'scandate' => '',
-                'msgcode' => 40000
+                'msgcode' => 40000,
             ];
             return $req;
         }
@@ -51,16 +51,10 @@ class UserService
     {
         $AppID = Config::get('extra.app_id');  //AppId
         $AppSecret = Config::get('extra.app_secret');  //AppSecret
-        $url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$AppID.'&secret='.$AppSecret.'&code='.$code.'&grant_type=authorization_code';
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        //拿到openid
-        $json =  curl_exec($ch);
-        curl_close($ch);
-        $arr=json_decode($json,1);
-        return $arr;
+        $url = sprintf(Config::get('extra.wx_openurl'),$AppID,$AppSecret,$code);
+        //发起请求
+        $result = curlGet($url);
+        return $result;
     }
 
 }

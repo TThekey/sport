@@ -48,6 +48,7 @@ class User extends Controller
         //未关注
         else {
             $req = [
+                'code' => 200,
                 'time' => '',
                 'scandate' => '',
                 'msgcode' => '',

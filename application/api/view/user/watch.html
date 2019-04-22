@@ -97,6 +97,10 @@
         <div class="line2">该产品是正版</div>
         <div>上次扫描时间<span class="scan"></span>, 您是第<span class="nub"></span>个扫描ID</div>
     </div>
+    <div id="fail">
+        <div><img src="http://sport.jiyichuancheng.com/static/api/img/no.png" alt=""></div>
+        <div class="line2">二维码失效</div>
+    </div>
 </div>
 <div class="modal" id="modal">
     <div class="drak"></div>
@@ -144,8 +148,9 @@
         $("#ok").hide();
         $('#yes').hide();
         $('#no').hide();
+        $('#fail').hide();
 
-        if(status == 1){
+        if (status == 1) {
             //第一次扫描和单用户多次扫描
             if (time == 0 || msgcode == 10000) {
                 $("#yes").show();
@@ -163,6 +168,9 @@
                     $('.nub').html(time);
                     $('.scan').html(scandate);
                 }
+            }
+            else if (msgcode == 40000) {
+                $('#fail').show();
             }
         }
         else{
