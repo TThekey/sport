@@ -22,7 +22,8 @@ function createQRcode($savePath, $qrData = 'PHP QR Code :)', $qrLevel = 'L', $qr
 
     //检测并创建生成文件夹
     if (!file_exists($PNG_TEMP_DIR)) {
-        mkdir($PNG_TEMP_DIR);
+
+        mkdir($PNG_TEMP_DIR,0777,true);
     }
     $filename = $PNG_TEMP_DIR . 'test.png';
     $errorCorrectionLevel = 'L';
@@ -56,7 +57,8 @@ function createQRcode($savePath, $qrData = 'PHP QR Code :)', $qrLevel = 'L', $qr
 /**
  * 生成随机字符串
  */
-function generateRandomString($length = 10) {
+function generateRandomString($length = 10)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {
@@ -69,7 +71,8 @@ function generateRandomString($length = 10) {
 /**
  * 生成序列号
  */
-function snMaker($pre = '') {
+function snMaker($pre = '')
+{
     $date = date('Ymd');
     $rand = rand(1000000,9999999);
     $time = mb_substr(time(), 5, 5, 'utf-8');

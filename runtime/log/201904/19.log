@@ -1,0 +1,778 @@
+---------------------------------------------------------------
+[2019-04-19T18:06:46+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=061FKRrh08czgx1gDaqh0EmZrh0FKRr6&state=20190419676124538781
+[运行时间：0.223913s] [吞吐率：4.47req/s] [内存消耗：995.21kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '061FKRrh08czgx1gDaqh0EmZrh0FKRr6',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000402s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000389s ]
+---------------------------------------------------------------
+[2019-04-19T18:07:45+08:00] 101.89.19.197 GET sport.jiyichuancheng.com/checkguanzhu
+[运行时间：0.154802s] [吞吐率：6.46req/s] [内存消耗：604.87kb] [文件加载：66]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0.1; OPPO R9s Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile MQQBrowser/6.9 TBS/036906 Safari/537.36 MicroMessenger/6.5.4.1000 NetType/4G Language/zh_CN',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'sport.jiyichuancheng.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ error ] [8]未定义数组索引: openid[/var/www/web/sport/application/api/controller/User.php:36]
+---------------------------------------------------------------
+[2019-04-19T18:08:04+08:00] 140.207.54.80 POST sport.jiyichuancheng.com/collection?a=1&signature=3967e2ad4d753310d10c9d5cb2ba865c94a2b047&timestamp=1555668484&nonce=1606399793&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.009446s] [吞吐率：105.86req/s] [内存消耗：571.59kb] [文件加载：61]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => '3967e2ad4d753310d10c9d5cb2ba865c94a2b047',
+  'timestamp' => '1555668484',
+  'nonce' => '1606399793',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+---------------------------------------------------------------
+[2019-04-19T18:11:07+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=0819elKg1KKaot0pwMJg1jtoKg19elKI&state=20190419676124538781
+[运行时间：0.232904s] [吞吐率：4.29req/s] [内存消耗：997.59kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0819elKg1KKaot0pwMJg1jtoKg19elKI',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000752s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , 1) [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[2019-04-19T18:11:16+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=071qv1iv0LG4Ri1FKlgv0M6Lhv0qv1i2&state=20190419676124538781
+[运行时间：0.239959s] [吞吐率：4.17req/s] [内存消耗：1,126.31kb] [文件加载：78]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '071qv1iv0LG4Ri1FKlgv0M6Lhv0qv1i2',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `code` [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT `mbstr` FROM `code` WHERE  `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SELECT * FROM `code` WHERE  `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `scan` [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SELECT * FROM `scan` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4'  AND `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] UPDATE `code`  SET `time` = `time` + 1  WHERE  `codeid` = '20190419676124538781' [ RunTime:0.002656s ]
+[ sql ] [ SQL ] INSERT INTO `scan` (`openid` , `codeid` , `scandate`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , '20190419676124538781' , 1555668676) [ RunTime:0.000291s ]
+---------------------------------------------------------------
+[2019-04-19T18:13:54+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=06102CGK0uudA92eSmFK0HyzGK002CGV&state=20190419676124538781
+[运行时间：0.215693s] [吞吐率：4.64req/s] [内存消耗：998.07kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '06102CGK0uudA92eSmFK0HyzGK002CGV',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , 1) [ RunTime:0.000333s ]
+---------------------------------------------------------------
+[2019-04-19T18:14:01+08:00] 140.207.54.80 POST sport.jiyichuancheng.com/collection?a=1&signature=54834c8b6402e88887f8b90eaf36568bde010d51&timestamp=1555668841&nonce=522702653&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.010742s] [吞吐率：93.09req/s] [内存消耗：979.73kb] [文件加载：76]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => '54834c8b6402e88887f8b90eaf36568bde010d51',
+  'timestamp' => '1555668841',
+  'nonce' => '522702653',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000748s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'openid' cannot be null[/var/www/web/sport/thinkphp/library/think/db/Connection.php:764]
+---------------------------------------------------------------
+[2019-04-19T18:19:11+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=011jFnZi29XOQB036RVi2tslZi2jFnZa&state=20190419676124538781
+[运行时间：0.009895s] [吞吐率：101.06req/s] [内存消耗：586.54kb] [文件加载：60]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '011jFnZi29XOQB036RVi2tslZi2jFnZa',
+  'state' => '20190419676124538781',
+)
+[ error ] [4]语法错误: unexpected 'private' (T_PRIVATE)[/var/www/web/sport/application/api/controller/User.php:122]
+---------------------------------------------------------------
+[2019-04-19T18:19:55+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=011U57mz1uTyfa0Ajijz1H05mz1U57mF&state=20190419676124538781
+[运行时间：0.222450s] [吞吐率：4.50req/s] [内存消耗：1,127.08kb] [文件加载：78]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '011U57mz1uTyfa0Ajijz1H05mz1U57mF',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000390s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `code` [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT `mbstr` FROM `code` WHERE  `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT * FROM `code` WHERE  `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000339s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `scan` [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT * FROM `scan` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4'  AND `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT `scandate` FROM `scan` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4'  AND `codeid` = '20190419676124538781' ORDER BY `scandate` DESC LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] INSERT INTO `scan` (`openid` , `codeid` , `scandate`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , '20190419676124538781' , 1555669195) [ RunTime:0.000295s ]
+---------------------------------------------------------------
+[2019-04-19T18:20:23+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=081efrQ11K0t7Q1ZWyN11LSbQ11efrQr&state=20190419676124538781
+[运行时间：0.240234s] [吞吐率：4.16req/s] [内存消耗：993.81kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '081efrQ11K0t7Q1ZWyN11LSbQ11efrQr',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000403s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[2019-04-19T18:20:30+08:00] 140.207.54.80 POST sport.jiyichuancheng.com/collection?a=1&signature=56dc64487ac49236e18700356e293ad2babb4c4f&timestamp=1555669230&nonce=2104049849&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.010463s] [吞吐率：95.57req/s] [内存消耗：944.65kb] [文件加载：70]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => '56dc64487ac49236e18700356e293ad2babb4c4f',
+  'timestamp' => '1555669230',
+  'nonce' => '2104049849',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000402s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('123' , 2) [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[2019-04-19T18:23:32+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=061TL1JS1yYNn41vUtHS1IL7JS1TL1Jk&state=20190419676124538781
+[运行时间：0.214606s] [吞吐率：4.66req/s] [内存消耗：997.25kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '061TL1JS1yYNn41vUtHS1IL7JS1TL1Jk',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000394s ]
+---------------------------------------------------------------
+[2019-04-19T18:23:54+08:00] 140.207.54.80 POST sport.jiyichuancheng.com/collection?a=1&signature=a05378fd649fdeb289c642bd71e97e0e6d4a506d&timestamp=1555669434&nonce=1391291620&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.011579s] [吞吐率：86.36req/s] [内存消耗：979.73kb] [文件加载：76]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => 'a05378fd649fdeb289c642bd71e97e0e6d4a506d',
+  'timestamp' => '1555669434',
+  'nonce' => '1391291620',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000401s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000744s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'openid' cannot be null[/var/www/web/sport/thinkphp/library/think/db/Connection.php:764]
+---------------------------------------------------------------
+[2019-04-19T18:25:12+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=061HHqgi0DVk4p1tHVfi02mLgi0HHqgX&state=20190419676124538781
+[运行时间：0.203263s] [吞吐率：4.92req/s] [内存消耗：997.20kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '061HHqgi0DVk4p1tHVfi02mLgi0HHqgX',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000364s ]
+---------------------------------------------------------------
+[2019-04-19T18:25:19+08:00] 140.207.54.80 POST sport.jiyichuancheng.com/collection?a=1&signature=459202043df44904aab9c44d5b6e67ce4f30e11d&timestamp=1555669519&nonce=1628122681&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.013391s] [吞吐率：74.68req/s] [内存消耗：944.65kb] [文件加载：70]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => '459202043df44904aab9c44d5b6e67ce4f30e11d',
+  'timestamp' => '1555669519',
+  'nonce' => '1628122681',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000426s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000908s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('123' , 1) [ RunTime:0.000364s ]
+---------------------------------------------------------------
+[2019-04-19T18:27:35+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=071pB18j0fJEIo12Uo6j0Mu88j0pB18j&state=20190419676124538781
+[运行时间：0.224389s] [吞吐率：4.46req/s] [内存消耗：997.20kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '071pB18j0fJEIo12Uo6j0Mu88j0pB18j',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000432s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000368s ]
+---------------------------------------------------------------
+[2019-04-19T18:27:40+08:00] 140.207.54.80 POST sport.jiyichuancheng.com/collection?a=1&signature=b8a1c39c92de600b7cfc7472e7345b3408dde558&timestamp=1555669660&nonce=1946549802&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.017475s] [吞吐率：57.22req/s] [内存消耗：953.79kb] [文件加载：71]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => 'b8a1c39c92de600b7cfc7472e7345b3408dde558',
+  'timestamp' => '1555669660',
+  'nonce' => '1946549802',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000725s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , 1) [ RunTime:0.000339s ]
+---------------------------------------------------------------
+[2019-04-19T18:31:41+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=001Id8L110b5fQ1mWpJ11v62L11Id8LD&state=20190419676124538781
+[运行时间：0.237084s] [吞吐率：4.22req/s] [内存消耗：1,128.27kb] [文件加载：78]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '001Id8L110b5fQ1mWpJ11v62L11Id8LD',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000440s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `code` [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT `mbstr` FROM `code` WHERE  `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT * FROM `code` WHERE  `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `scan` [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT * FROM `scan` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4'  AND `codeid` = '20190419676124538781' LIMIT 1 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] UPDATE `code`  SET `time` = `time` + 1  WHERE  `codeid` = '20190419676124538781' [ RunTime:0.010514s ]
+[ sql ] [ SQL ] INSERT INTO `scan` (`openid` , `codeid` , `scandate`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , '20190419676124538781' , 1555669901) [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[2019-04-19T18:33:43+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=0817SeTi10G0gv00FeSi15W9Ti17SeTG&state=20190419676124538781
+[运行时间：0.214591s] [吞吐率：4.66req/s] [内存消耗：993.81kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '0817SeTi10G0gv00FeSi15W9Ti17SeTG',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000408s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000881s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000402s ]
+---------------------------------------------------------------
+[2019-04-19T18:33:50+08:00] 140.207.54.79 POST sport.jiyichuancheng.com/collection?a=1&signature=1bf8ffd4d75dd54950dc885a0c6812c05f3e9cd1&timestamp=1555670030&nonce=631304455&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.015765s] [吞吐率：63.43req/s] [内存消耗：953.82kb] [文件加载：71]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => '1bf8ffd4d75dd54950dc885a0c6812c05f3e9cd1',
+  'timestamp' => '1555670030',
+  'nonce' => '631304455',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000743s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , 1) [ RunTime:0.000337s ]
+---------------------------------------------------------------
+[2019-04-19T18:34:56+08:00] 112.17.245.123 GET sport.jiyichuancheng.com/checkguanzhu?code=021uDEQ71PKgpM1xGIP71WUqQ71uDEQx&state=20190419676124538781
+[运行时间：0.199687s] [吞吐率：5.01req/s] [内存消耗：993.81kb] [文件加载：75]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'checkguanzhu',
+  'route' => 'api/User/checkGuanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sport.jiyichuancheng.com',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403 MicroMessenger/7.0.3(0x17000321) NetType/4G Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'code' => '021uDEQ71PKgpM1xGIP71WUqQ71uDEQx',
+  'state' => '20190419676124538781',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /var/www/web/sport/application/api/view/user/watch.html [ array (
+  0 => 'req',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000387s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SELECT `status` FROM `user` WHERE  `openid` = 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' LIMIT 1 [ RunTime:0.000354s ]
+---------------------------------------------------------------
+[2019-04-19T18:35:01+08:00] 140.207.54.79 POST sport.jiyichuancheng.com/collection?a=1&signature=65a406d265bb9535a688e7bd0a4c817128ed13d3&timestamp=1555670101&nonce=1056582339&openid=oyaBG51KIYr1NRDpsqWQ9Qy9jCG4
+[运行时间：0.010748s] [吞吐率：93.04req/s] [内存消耗：953.79kb] [文件加载：71]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+  'rule' => 'collection',
+  'route' => 'api/User/guanzhu',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'sport.jiyichuancheng.com',
+  'pragma' => 'no-cache',
+  'content-length' => '273',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  'a' => '1',
+  'signature' => '65a406d265bb9535a688e7bd0a4c817128ed13d3',
+  'timestamp' => '1555670101',
+  'nonce' => '1056582339',
+  'openid' => 'oyaBG51KIYr1NRDpsqWQ9Qy9jCG4',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000384s ] mysql:host=127.0.0.1;dbname=wx_sport;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] INSERT INTO `user` (`openid` , `status`) VALUES ('oyaBG51KIYr1NRDpsqWQ9Qy9jCG4' , 1) [ RunTime:0.000332s ]

@@ -1,0 +1,15 @@
+---------------------------------------------------------------
+[2019-04-21T08:03:16+08:00] 47.100.51.108 GET sport.jiyichuancheng.com/
+[运行时间：0.042582s] [吞吐率：23.48req/s] [内存消耗：586.77kb] [文件加载：61]
+[ info ] [ LANG ] /var/www/web/sport/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'api'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D))',
+  'host' => 'sport.jiyichuancheng.com',
+  'accept' => 'text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)

@@ -18,16 +18,8 @@ class Code extends Controller
      */
     public function getCode()
     {
-        $filename = CodeService::getQrCode();
-        $this->assign('filename',$filename); //二维码路径
-        return view('qrcode');
+        CodeService::getQrCode();
+        return '二维码成功生成在public/qrcode目录下';
     }
-
-//    public function createUrl()
-//    {
-//        $url = CodeService::createUrl();
-//        echo $url;
-//
-//    }
 
 }

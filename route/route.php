@@ -9,11 +9,19 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-//use think\Route;
+use think\facade\Route;
 
-//生成二维码
-Route::get('getcode','api/Code/getCode');
+//关注后回调地址
+Route::post('connection','api/User/guanzhu');
 
-//校验序列号
-Route::get('checkstr','api/Scan/checkStr');
+Route::rules([
+    //生成二维码
+   'getcode' => 'api/Code/getCode',
+    //建立连接
+    'connection' => 'api/User/guanzhu',
+    //校验是否关注
+    'checkguanzhu' => 'api/User/checkGuanzhu'
+],'GET');
+
+
 

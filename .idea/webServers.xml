@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="165460f7-d980-4956-9ac7-671cd8b2d935" name="腾讯云" url="http://148.70.99.8">
+        <fileTransfer host="148.70.99.8" port="22" rootFolder="/web" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="f192cb08-55c8-48d7-9bdb-d268c4a1c95b" name="sport" url="http://47.92.197.128">
+        <fileTransfer host="47.92.197.128" port="22" rootFolder="/sport" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

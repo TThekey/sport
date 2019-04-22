@@ -19,7 +19,7 @@ return [
     // 应用地址
     'app_host'               => '',
     // 应用调试模式
-    'app_debug'              => true,
+    'app_debug'              => false,
     // 应用Trace
     'app_trace'              => false,
     // 是否支持多模块
@@ -107,7 +107,7 @@ return [
     // 域名根，如thinkphp.cn
     'url_domain_root'        => '',
     // 是否自动转换URL中的控制器和操作名
-    'url_convert'            => true,
+    'url_convert'            => false,
     // 默认的访问控制器层
     'url_controller_layer'   => 'controller',
     // 表单请求类型伪装变量
@@ -119,7 +119,7 @@ return [
     // 是否开启请求缓存 true自动缓存 支持设置请求缓存规则
     'request_cache'          => false,
     // 请求缓存有效期
-    'request_cache_expire'   => null,
+    'request_cache_expire'   => 3600,
     // 全局请求缓存排除规则
     'request_cache_except'   => [],
     // 是否开启路由缓存
@@ -134,9 +134,6 @@ return [
     'dispatch_error_tmpl'    => Env::get('think_path') . 'tpl/dispatch_jump.tpl',
 
     // 视图输出字符串内容替换
-    'view_replace_str'       => [
-        '__IMG__' =>'http://zerg.com/qrcode',
-    ],
 
     // 异常页面的模板文件
     'exception_tmpl'         => Env::get('think_path') . 'tpl/think_exception.tpl',
@@ -150,13 +147,6 @@ return [
 
 
 
-    // 唯一字符串
-    'string'                 => 'VaHQ4kU32hOatRCYwXqA',
 
-    //appid
-    'appid'                  => 'wx32162a992ac3b89a',
-
-    //appsecret
-    'appsecret'              => 'e471850aac54b0c8e3205b75ab9e9bfe',
 
 ];
