@@ -12,7 +12,6 @@ use app\api\model\Code;
 use app\api\model\Scan as ScanModel;
 use app\api\model\Code as CodeModel;
 use think\Db;
-use think\facade\Config;
 
 class ScanService
 {

@@ -17,6 +17,9 @@ return [
 
     //二维码回调地址
     'callback'              => 'http://sport.jiyichuancheng.com/checkguanzhu',
+    //网站根目录
+    'root_path'             => 'http://sport.jiyichuancheng.com',
+
     //请求微信服务器拿code码
     'wx_codeurl'            => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_base&state=%s#wechat_redirect',
     //请求微信服务器拿openid

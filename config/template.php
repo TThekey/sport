@@ -12,7 +12,7 @@
 // +----------------------------------------------------------------------
 // | 模板设置
 // +----------------------------------------------------------------------
-
+use think\facade\Env;
 return [
     // 模板引擎类型 支持 php think 支持扩展
     'type'         => 'Think',
@@ -32,5 +32,9 @@ return [
     'taglib_begin' => '{',
     // 标签库标签结束标记
     'taglib_end'   => '}',
+    //视图输出替换
+    'tpl_replace_string'  =>  [
+        '__PUBLIC__' =>'http://sport.jiyichuancheng.com/static/admin',
+    ]
 
 ];
