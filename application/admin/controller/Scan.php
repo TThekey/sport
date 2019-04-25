@@ -12,8 +12,11 @@ use app\admin\model\Scan as ScanModel;
 use think\Controller;
 use think\facade\Request;
 
-class Scan extends Controller
+class Scan extends Base
 {
+    /**
+     * 扫描列表
+     */
     public function lst()
     {
         $openid = Request::param('openid');

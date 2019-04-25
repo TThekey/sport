@@ -26,22 +26,22 @@
                                     <!--<img src="__PUBLIC__/images/adam-jansen.jpg">-->
                                 </div>
                                 <section>
-                                    <h2><span class="profile"><span></span></span></h2>
+                                    <h2><span class="profile"><span>{$Request.session.username}</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <li class="username"><a>David Stevenson</a></li>
                                 <li class="dropdown-footer">
-                                    <a href=>
+                                    <a href={:url('admin/Login/logout')}>
                                         退出登录
                                     </a>
                                 </li>
-                                <li class="dropdown-footer">
-                                    <a href=>
-                                        修改密码
-                                    </a>
-                                </li>
+                                <!--<li class="dropdown-footer">-->
+                                    <!--<a href="#">-->
+                                        <!--修改密码-->
+                                    <!--</a>-->
+                                <!--</li>-->
                             </ul>
                             <!--/Login Area Dropdown-->
                         </li>

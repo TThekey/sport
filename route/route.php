@@ -11,9 +11,6 @@
 
 use think\facade\Route;
 
-//关注后回调地址
-Route::post('connection','api/User/guanzhu');
-
 //========api模块========
 Route::rules([
     //建立连接
@@ -22,11 +19,18 @@ Route::rules([
     'checkguanzhu' => 'api/User/checkGuanzhu'
 ],'GET');
 
+//关注后回调地址
+Route::post('connection','api/User/guanzhu');
+
 
 //========admin模块======
 Route::rules([
     //后台首页
     'index' => 'admin/Index/index',
+    //登录
+    'login' => 'admin/Login/login',
+    //退出登录
+    'logout' => 'admin/Login/logout',
     //用户列表
     'userlst' => 'admin/User/lst',
     //扫描列表
@@ -38,35 +42,26 @@ Route::rules([
     //删除二维码
     'delcode' => 'admin/Code/del',
     //批量下载
-    'downloadcode' => 'admin/Code/downloadCode'
-
+    'downloadcode' => 'admin/Code/downloadCode',
+    //创建二维码组
+    'creategroup' => 'admin/Group/create',
+    //二维码组列表
+    'grouplst' => 'admin/Group/lst',
+    //删除二维码组
+    'delgroup' => 'admin/group/del',
 ],'GET');
 
-//提交数据
-Route::post('createcode','admin/Code/create');
-
-////后台首页
-//Route::get('index','admin/Index/index');
-////用户列表
-//Route::get('userlst','admin/User/lst');
-//
-////创建二维码
-////界面
-//Route::get('createcode','admin/Code/create');
-
-//
-////二维码列表
-//Route::get('codelst','admin/Code/lst');
-//
-////删除二维码
-//Route::get('delcode','admin/Code/del');
-//
-////批量下载
-//Route::get('downloadcode','admin/Code/downloadCode');
+Route::rules([
+    //创建二维码
+    'createcode' => 'admin/Code/create',
+    //创建二维码组
+    'creategroup' => 'admin/Group/create',
+    //登录
+    'login' => 'admin/Login/login',
+],'POST');
 
 
-//扫描列表
-//Route::get('scanlst','admin/Scan/lst');
+
 
 
 

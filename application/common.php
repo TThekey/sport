@@ -11,6 +11,8 @@
 
 // 应用公共文件
 
+use app\admin\service\PinyinService;
+
 /**
  * 生成二维码
  */
@@ -38,8 +40,17 @@ function createQRcode($savePath, $qrData = 'PHP QR Code :)', $qrLevel = 'L', $qr
         if (trim($qrData) == '') {
             die('data cannot be empty!');
         }
+
+        if(preg_match('/^[\x7f-\xff]+$/', $savePrefix)){
+            $savePrefix = PinyinService::encode($savePrefix);
+            $filename = $PNG_TEMP_DIR . $savePrefix . md5($qrData . '|' . $errorCorrectionLevel . '|' . $matrixPointSize) . '.png';
+        }else{
+            $filename = $PNG_TEMP_DIR . $savePrefix . md5($qrData . '|' . $errorCorrectionLevel . '|' . $matrixPointSize) . '.png';
+        }
+
+
         //生成文件名 文件路径+图片名字前缀+md5(名称)+.png
-        $filename = $PNG_TEMP_DIR . $savePrefix . md5($qrData . '|' . $errorCorrectionLevel . '|' . $matrixPointSize) . '.png';
+//        $filename = $PNG_TEMP_DIR . $savePrefix . md5($qrData . '|' . $errorCorrectionLevel . '|' . $matrixPointSize) . '.png';
         //开始生成
         \PHPQRCode\QRcode::png($qrData, $filename, $errorCorrectionLevel, $matrixPointSize, 2);
     } else {

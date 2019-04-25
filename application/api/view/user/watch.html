@@ -150,33 +150,34 @@
         $('#no').hide();
         $('#fail').hide();
 
-        if (status == 1) {
-            //第一次扫描和单用户多次扫描
-            if (time == 0 || msgcode == 10000) {
+
+        if(status == 1){
+            if(time == 0){
                 $("#yes").show();
             }
-            //正常扫描
-            else if (msgcode == 10001) {
-                if (time > 1 && time < 10) {
-                    //扫描次数在1到10次
+            else if(time>=1&&time<10){
+                if(msgcode == 10000){
+                    $("#yes").show();
+                }
+                else if(msgcode == 10001){
                     $("#ok").show();
-                    $('.nub').html(time);
-                    $('.scan').html(scandate);
-                } else {
-                    //扫描次数大于等于10次
-                    $("#no").show();
                     $('.nub').html(time);
                     $('.scan').html(scandate);
                 }
             }
-            else if (msgcode == 40000) {
-                $('#fail').show();
+            else if(time >=10){
+                //扫描次数大于等于10次
+                $("#no").show();
+                $('.nub').html(time);
+                $('.scan').html(scandate);
             }
         }
         else{
             //未关注。点击关注
             $("#modal").show();
         }
+
+
 
         // $("#guan").click(
         //     function () {

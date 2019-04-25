@@ -13,6 +13,9 @@ use think\Controller;
 
 class Index extends Controller
 {
+    /**
+     * 后台首页展示
+     */
     public function index()
     {
         return view();

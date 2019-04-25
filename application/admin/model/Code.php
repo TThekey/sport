@@ -8,18 +8,18 @@
 
 namespace app\admin\model;
 
-
-use think\facade\Config;
 use think\facade\Env;
 use think\Model;
 
 class Code extends Model
 {
+    //每页显示10条
     public static function getAllCode()
     {
-        $codes = self::paginate(5);
+        $codes = self::paginate(10);
         return $codes;
     }
+
 
     public static function getCodeByGroup($group)
     {
@@ -27,6 +27,7 @@ class Code extends Model
         return $codes;
     }
 
+    //删除二维码
     public static function delCode($codeid)
     {
         $src = self::where('codeid',$codeid)->value('src');
@@ -34,6 +35,7 @@ class Code extends Model
 
         if(file_exists($file))
         {
+            //删除服务器图片
             unlink($file);
         }else{
             return [
@@ -42,6 +44,7 @@ class Code extends Model
             ];
         }
 
+        //删除数据库数据
         $res = self::where('codeid',$codeid)->delete();
         if($res)
         {

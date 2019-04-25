@@ -11,32 +11,30 @@ namespace app\admin\controller;
 use app\admin\service\CodeService;
 use app\admin\service\DownloadService;
 use app\admin\model\Code as CodeModel;
+use app\admin\model\Group as GroupModel;
 use think\Controller;
-use think\Db;
 use think\facade\Request;
 
-class Code extends Controller
+class Code extends Base
 {
+    /**
+     * 二维码列表
+     */
     public function lst()
     {
-        $groups = Db::table('code')->distinct(true)->field('group')->select();
-
         if(Request::param('group'))
         {
             $group = Request::param('group');
             $codes = CodeModel::getCodeByGroup($group);
             $this->assign([
-                'groups' => $groups,
                 'group'  => $group,
                 'codes'  => $codes,
-
             ]);
             return view();
 
         }else{
             $codes = CodeModel::getAllCode();
             $this->assign([
-                'groups' => $groups,
                 'group'  => 'all',
                 'codes'  => $codes,
 
@@ -45,8 +43,13 @@ class Code extends Controller
         }
     }
 
+    /**
+     * 创建二维码
+     */
     public function create()
     {
+        $groups = GroupModel::select();
+
         if(Request::isPost())
         {
             $qrsize = Request::param('qrsize');
@@ -56,9 +59,14 @@ class Code extends Controller
             CodeService::getQrCode($qrsize,$qrlevel,$group);
             return $this->success('二维码成功生成','admin/code/lst');
         }
-        return view('code/create');
+
+        $this->assign('groups',$groups);
+        return view();
     }
 
+    /**
+     * 删除二维码
+     */
     public function del()
     {
         $codeid = Request::param('codeid');
@@ -73,6 +81,9 @@ class Code extends Controller
     }
 
 
+    /**
+     * 下载二维码
+     */
     public function downloadCode()
     {
         $group = Request::param('group');

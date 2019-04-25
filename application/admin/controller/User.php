@@ -11,8 +11,11 @@ namespace app\admin\controller;
 use app\admin\model\User as UserModel;
 use think\Controller;
 
-class User extends Controller
+class User extends Base
 {
+    /**
+     * 用户列表
+     */
     public function lst()
     {
         $user = UserModel::urlLst();

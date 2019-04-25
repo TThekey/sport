@@ -8,10 +8,8 @@
 
 namespace app\admin\service;
 
-use app\admin\service\ZipFileService;
 use think\Db;
 use think\facade\Config;
-use app\admin\model\Code as CodeModel;
 
 class DownloadService
 {
@@ -37,10 +35,6 @@ class DownloadService
         }
         $zip->close();
         $filename = $group.'.zip'; //下载的默认文件名
-//        $zip = new ZipFileService();
-//
-//        $zip->add_path($code_path);
-//        $zip->output($dfile);
 
         // 下载文件
         ob_clean();

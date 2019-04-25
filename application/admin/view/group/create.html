@@ -37,7 +37,7 @@
                                         <li>
                         <a href="#">系统</a>
                     </li>
-                        <li class="active">生成二维码</li>
+                        <li class="active">创建二维码组</li>
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -54,46 +54,15 @@
                 <div id="horizontal-form">
                     <form class="form-horizontal" role="form" action="" method="post">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label no-padding-right">二维码大小</label>
+                            <label class="col-sm-2 control-label no-padding-right">组名</label>
                             <div class="col-sm-6">
-                                <select name="qrsize" id="qrsize">
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                </select>
+                                <input class="form-control" id="name" placeholder="" name="name" type="text">
                             </div>
-                            <p class="help-block col-sm-4 red">* 5-8可选，数字越大图片尺寸越大</p>
+                            <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label no-padding-right">纠错比例</label>
-                            <div class="col-sm-6">
-                                <select name="qrlevel" id="qrlevel">
-                                    <option value="L">L</option>
-                                    <option value="M">M</option>
-                                    <option value="Q">Q</option>
-                                    <option value="H">H</option>
-                                </select>
-                            </div>
-                            <p class="help-block col-sm-4 red">* 纠错比例 分为L、M、Q、H四个等级，H代表最高纠错能力</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label no-padding-right">所属分组</label>
-                            <div class="col-sm-6">
-                                <select name="group" id="group">
-                                    {volist name='groups' id='vo'}
-                                    <option value={$vo.name}>{$vo.name}</option>
-                                    {/volist}
-                                </select>
-                            </div>
-                            <p class="help-block col-sm-4 red">* 必选</p>
-                        </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">生成</button>
+                                <button type="submit" class="btn btn-default">保存</button>
                             </div>
                         </div>
                     </form>
