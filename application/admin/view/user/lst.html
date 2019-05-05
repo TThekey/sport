@@ -1,97 +1,73 @@
-<!DOCTYPE html>
-<html><head>
-	    <meta charset="utf-8">
-    <title>sport管理</title>
-
-    <meta name="description" content="Dashboard">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--Basic Styles-->
-    <link href="http://sport.jiyichuancheng.com/static/admin/style/bootstrap.css" rel="stylesheet">
-    <link href="http://sport.jiyichuancheng.com/static/admin/style/font-awesome.css" rel="stylesheet">
-    <link href="http://sport.jiyichuancheng.com/static/admin/style/weather-icons.css" rel="stylesheet">
-
-    <!--Beyond styles-->
-    <link id="beyond-link" href="http://sport.jiyichuancheng.com/static/admin/style/beyond.css" rel="stylesheet" type="text/css">
-    <link href="http://sport.jiyichuancheng.com/static/admin/style/demo.css" rel="stylesheet">
-    <link href="http://sport.jiyichuancheng.com/static/admin/style/typicons.css" rel="stylesheet">
-    <link href="http://sport.jiyichuancheng.com/static/admin/style/animate.css" rel="stylesheet">
-    
-</head>
-<body>
-	{include file="common/top"/}
-	
-	<div class="main-container container-fluid">
-		<div class="page-container">
-			            <!-- Page Sidebar -->
-            {include file="common/left"/}
-
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                                        <li>
-                        <a href="#">系统</a>
-                    </li>
-                                        <li class="active">用户管理</li>
-                                        </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-
-                <!-- Page Body -->
-                <div class="page-body">
-<div class="row">
-    <div class="col-lg-12 col-sm-12 col-xs-12">
-        <div class="widget">
-            <div class="widget-body">
-                <div class="flip-scroll">
-                    <table class="table table-bordered table-hover">
-                        <thead class="">
-                            <tr>
-                                <th class="text-center">openID</th>
-                                <th class="text-center">扫码记录</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {volist name="user" id="vo"}
-                            <tr>
-                                <td align="center">{$vo.openid}</td>
-                                <td align="center">
-                                    <a href="{:url('admin/scan/lst')}?openid={$vo.openid}" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 查看
-                                    </a>
-
-                                </td>
-                            </tr>
-                            {/volist}
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    {$user|raw}
+<!-- 模板 -->
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs12">
+            <div class="layui-card">
+                <div class="layui-card-header">用户列表</div>
+                <div class="layui-card-body">
+                    <table id="demo" lay-filter="test"></table>
+                    <script type="text/html" id="bar_detail">
+                        <a class="layui-btn layui-btn-sm" lay-event="detail">查看</a>
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- 脚本 -->
+<script>
+    layui.use(['jquery', 'table','layer'], function () {
+        var $ = layui.jquery,
+            layer = layui.layer,
+            table = layui.table;
 
-                </div>
-                <!-- /Page Body -->
-            </div>
-            <!-- /Page Content -->
-		</div>	
-	</div>
+        var documentWidth = $(document).width;
 
-	    <!--Basic Scripts-->
-    <script src="http://sport.jiyichuancheng.com/static/admin/style/jquery_002.js"></script>
-    <script src="http://sport.jiyichuancheng.com/static/admin/style/bootstrap.js"></script>
-    <script src="http://sport.jiyichuancheng.com/static/admin/style/jquery.js"></script>
-    <!--Beyond Scripts-->
-    <script src="http://sport.jiyichuancheng.com/static/admin/style/beyond.js"></script>
-    
+        //第一个实例
+        table.render({
+            elem: '#demo',
+            url: '/admin/user/lst', //数据接口
+            cols: [
+                [ //表头
+                    {
+                    field: 'id',
+                    title: 'ID',
+                    width: 80,
+                    sort: true,
+                    fixed: 'left'
+                    }, {
+                    field: 'openid',
+                    title: 'openID',
+                    width: documentWidth*0.5,
+                    align: 'center'
+                },{
+                    title: '扫码记录',
+                    fixed: 'right',
+                    width: documentWidth*0.5,
+                    align: 'center',
+                    toolbar: '#bar_detail'
+                }
+                ]
+            ],
+            page: {
+                limits : [30,40,50],
+                limit : 30
+            },
+            height: 'full-200'
+        });
 
+        table.on('tool(test)',function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            if(layEvent === 'detail'){
+                window.location.href = '/adminWeb/#/scanlst?openid='+data.openid;
+            }
+        });
 
-</body></html>
+    });
+
+</script>
+<!-- 样式 -->
+<style scoped>
+
+</style>

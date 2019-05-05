@@ -20,7 +20,7 @@ class Admin extends Model
             if($password == $user['password']){
                 session("username",$username);  //存入session
                 session("uid",$user["id"]);
-                return 1;   //登录成功Base.php
+                return 1;   //登录成功
             }
             else{
                 return 2;   //密码错误

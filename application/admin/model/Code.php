@@ -14,16 +14,16 @@ use think\Model;
 class Code extends Model
 {
     //每页显示10条
-    public static function getAllCode()
+    public static function getAllCode($start,$limit)
     {
-        $codes = self::paginate(10);
+        $codes = self::limit($start,$limit)->select();
         return $codes;
     }
 
 
-    public static function getCodeByGroup($group)
+    public static function getCodeByGroup($group,$start,$limit)
     {
-        $codes = self::where('group',$group)->paginate(5,false,['query' => request()->param()]);
+        $codes = self::where('group',$group)->limit($start,$limit)->select();
         return $codes;
     }
 
@@ -39,7 +39,7 @@ class Code extends Model
             unlink($file);
         }else{
             return [
-                'res' => '0',
+                'code' => '0',
                 'msg' => '本地图片不存在，删除失败'
             ];
         }
@@ -49,12 +49,12 @@ class Code extends Model
         if($res)
         {
             return [
-                'res' => '1',
+                'code' => '1',
                 'msg' => '删除成功'
             ];
         }else{
             return [
-                'res' => '0',
+                'code' => '0',
                 'msg' => '删除失败'
             ];
         }

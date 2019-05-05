@@ -27,7 +27,7 @@ class Login extends Controller
             $res = AdminModel::checkLogin($username,$password);
 
             if($res == 1){
-                $this->success('登录成功','admin/index/index');
+                return $this->success('登录成功');
             }
             elseif($res == 2){
                 $this->error('密码错误');
@@ -45,8 +45,11 @@ class Login extends Controller
      */
     public function logout()
     {
-        session(null);  //清除session
-        $this->success("退出成功","admin/login/login");
+        $status = Request::param('status');
+        if($status == 'OK'){
+            session(null);  //清除session
+            return $this->success("退出成功");
+        }
     }
 
 

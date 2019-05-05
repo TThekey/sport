@@ -12,35 +12,71 @@ use app\admin\service\CodeService;
 use app\admin\service\DownloadService;
 use app\admin\model\Code as CodeModel;
 use app\admin\model\Group as GroupModel;
-use think\Controller;
+use think\facade\Cache;
 use think\facade\Request;
 
 class Code extends Base
 {
+
     /**
-     * 二维码列表
+     * 二维码数据接口
      */
     public function lst()
     {
-        if(Request::param('group'))
-        {
-            $group = Request::param('group');
-            $codes = CodeModel::getCodeByGroup($group);
-            $this->assign([
-                'group'  => $group,
-                'codes'  => $codes,
-            ]);
-            return view();
+        $page = Request::param('page') ? Request::param('page') : 1;
+        $page = intval($page);
+        $limit = Request::param('limit') ? Request::param('limit') : 10;
+        $limit = intval($limit);
+        $start = $limit * ($page - 1);
 
-        }else{
-            $codes = CodeModel::getAllCode();
-            $this->assign([
-                'group'  => 'all',
-                'codes'  => $codes,
-
-            ]);
-            return view();
+        if(Cache::get('group')){
+            $group = Cache::get('group');
+            if($group == 'all'){
+                $codes = CodeModel::getAllCode($start,$limit);
+                $count = CodeModel::count();
+            }
+            else{
+                $codes = CodeModel::getCodeByGroup($group,$start,$limit);
+                $count = CodeModel::where('group',$group)->count();
+            }
         }
+        else{
+            $codes = CodeModel::getAllCode($start,$limit);
+            $count = CodeModel::count();
+        }
+
+        //条数
+//        $count = CodeModel::count();
+
+        $list["msg"] = "";
+        $list["code"] = 0;
+        $list["count"] = $count;
+        $list["data"] = $codes;
+        return json($list);
+    }
+
+
+    /**
+     * 二维码列表页面
+     */
+    public function lstView()
+    {
+        $groups = GroupModel::select();
+        if(Request::param('group')){
+            $group = Request::param('group');
+            Cache::set('group',$group);
+            return view('code/lst',[
+                'group' => $group,
+                'groups' => $groups
+            ]);
+        }
+        else{
+            return view('code/lst',[
+                'group' => 'all',
+                'groups' => $groups
+            ]);
+        }
+
     }
 
     /**
@@ -53,11 +89,12 @@ class Code extends Base
         if(Request::isPost())
         {
             $qrsize = Request::param('qrsize');
-            $qrlevel = Request::param('qrlevel');
             $group = Request::param('group');
             //生成二维码
-            CodeService::getQrCode($qrsize,$qrlevel,$group);
-            return $this->success('二维码成功生成','admin/code/lst');
+            $res = CodeService::getQrCode($qrsize,$group);
+            if($res){
+                $this->success('生成成功');
+            }
         }
 
         $this->assign('groups',$groups);
@@ -71,28 +108,17 @@ class Code extends Base
     {
         $codeid = Request::param('codeid');
         $result = CodeModel::delCode($codeid);
-        if($result['res'] == 1)
-        {
-            return $this->success($result['msg'],'admin/code/lst');
-
-        }else{
-            return $this->error($result['msg'],'admin/code/lst');
-        }
+        return json($result);
     }
 
 
     /**
      * 下载二维码
      */
-    public function downloadCode()
+    public function downLoadCode()
     {
         $group = Request::param('group');
-        if($group == 'all'){
-            return $this->error('不支持全量下载','admin/code/lst');
-        }else{
-            DownloadService::downloadCodeByGroup($group);
-        }
-
+        DownloadService::downloadCodeByGroup($group);
     }
 
 }

@@ -1,0 +1,88 @@
+<!-- 模板 -->
+
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs12">
+            <div class="layui-card">
+                <div class="layui-card-header">模块开通记录</div>
+                <div class="layui-card-body">
+                    <table id="customer"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 脚本 -->
+
+<script>
+    layui.use(['form','table'], function() {
+        var form = layui.form,
+            $ = layui.jquery;
+        table = layui.table;
+        form.render();
+
+        //渲染客户列表
+        table.render({
+            elem: '#customer'
+            ,height: 'full-200'
+            ,url: '/manager/module/createList/' //数据接口
+            ,page: true //开启分页
+            ,size:'sm'
+            ,cols: [[ //表头
+                {field: 'crea_id', title: 'ID', width:120, sort: true, fixed: 'left'}
+                ,{field: 'crea_email', title: '邮箱', width:200,fixed: 'left'}
+                ,{field: 'module', title: '开通模块', minWidth:400, sort: true, templet:'#moduleTpl'}
+                ,{field: 'create_time', title: '开通时间', width:120}
+                ,{field: 'order_origin', title: '订单来源', width: 100, templet:'#originTpl'}
+                ,{field: 'order_price', title: '订单金额', width: 100, sort: true}
+                ,{field: 'seller', title: '业务员'}
+                ,{field: 'state', title: '模块激活情况', templet:'#stateTpl'}
+            ]]
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function(data) {
+            console.log(data.field);
+            $.post('/api/submitForm', data.field, function(res) {
+                console.log(res);
+                layer.msg(res.success ? res.msg : '提交失败.');
+            }, 'json');
+            return false;
+        });
+    });
+</script>
+<!-- 样式 -->
+<style scoped>
+    .module-item{
+        height:40px;
+        line-height: 40px;
+        position: relative;
+    }
+    .module-item:before {
+        height:20px;
+        position: absolute;
+        top:10px;
+        left:10px;
+        width:5px;
+        background-color:dodgerblue;
+    }
+</style>
+<script type="text/html" id="moduleTpl">
+    {{d.cv == 1?'个人简历x':''}}{{d.cv == 1?d.cv_amount:''}}
+    {{d.dorm == 1?'宿舍x':''}}{{d.dorm == 1?d.dorm_amount:''}}
+    {{d.ielts == 1?'雅思计划x':''}}{{d.ielts == 1?d.ielts_amount:''}}
+    {{d.ielts_write == 1?'雅思写作批改x':''}}{{d.ielts_write == 1?d.ielts_write_amount:''}}
+    {{d.laguage == 1?'语言班x':''}}{{d.laguage == 1?d.language_amount:''}}
+    {{d.letter == 1?'推荐信x':''}}{{d.letter == 1?d.letter_amount:''}}
+    {{d.polish == 1?'推荐信x':''}}{{d.polish == 1?d.polish_amount:''}}
+    {{d.ps == 1?'个人陈述x':''}}{{d.ps == 1?d.ps_amount:''}}
+    {{d.reply == 1?'申请x':''}}{{d.reply == 1?d.reply_amount:''}}
+    {{d.school == 1?'选校x':''}}{{d.school == 1?d.school_amount:''}}
+    {{d.sign == 1?'签证x':''}}{{d.sign == 1?d.sign_amount:''}}
+</script>
+<script type="text/html" id="originTpl">
+    {{d.order_origin == 1?'淘宝':'微信'}}
+</script>
+<script type="text/html" id="stateTpl">
+    <span style="color:{{d.state == 1?'red':'green'}}">{{d.state == 1?'未激活':'已激活'}}</span>
+</script>

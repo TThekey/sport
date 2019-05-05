@@ -9,7 +9,7 @@ class Base  extends Controller
     public function initialize()
     {
         if (!session("username")) {
-            $this->error("请先登录", "admin/login/login");
+            $this->redirect('/index');
         }
 
     }

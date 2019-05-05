@@ -18,7 +18,7 @@ class CodeService
      * 生成二维码
      * 存入code表
      */
-    public static function getQrCode($size,$level,$group)
+    public static function getQrCode($size,$group)
     {
         //$savePath 图片存储路径
         $savePath = Env::get('root_path') . 'public/qrcode/'.$group.'/';
@@ -35,7 +35,7 @@ class CodeService
         $qrData = $wxurl;
 
         // $qrLevel 默认纠错比例 分为L、M、Q、H四个等级，H代表最高纠错能力
-        $qrLevel = $level;
+        $qrLevel = 'H';
         //$qrSize 二维码图大小，1－10可选，数字越大图片尺寸越大
         $qrSize = $size;
         // $savePrefix 图片名称前缀
@@ -48,12 +48,17 @@ class CodeService
         $mb_str = self::setSeNum($cid);
 
         //存入code表
-        CodeModel::create([
+        $res = CodeModel::create([
             'codeid' => $cid,
             'src'    => $pic,
             'mbstr'  => $mb_str,
             'group'  => $group
         ]);
+
+        if($res){
+            return true;
+        }
+
     }
 
 

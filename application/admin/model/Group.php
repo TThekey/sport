@@ -14,31 +14,31 @@ use think\Model;
 
 class Group extends Model
 {
-    //每页显示3条
-    public static function getAllGroups()
+    public static function getAllGroups($start,$limit)
     {
-        $groups = self::paginate(3);
+        $groups = self::limit($start,$limit)->select();
         return $groups;
     }
 
     //删除二维码组
-    public static function delGroup($group)
+    public static function delGroup($id)
     {
+        $group = self::where('id',$id)->value('name');
         $res = CodeMOdel::where('group',$group)->find();
         if($res){
             return [
-                'res' => '0',
-                'msg' => $group.'组内还有二维码，删除失败'
+                'code' => '0',
+                'msg' => '组内还有二维码，删除失败'
             ];
         }
         else{
             $dir = Env::get('root_path') . 'public/qrcode/'.$group;
             //删除二维码目录
             rmdir($dir);
-            $del = self::where('name',$group)->delete();
+            $del = self::where('id',$id)->delete();
             if($del){
                 return [
-                    'res' => '1',
+                    'code' => '1',
                     'msg' => '删除成功'
                 ];
             }

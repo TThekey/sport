@@ -32,21 +32,21 @@ Route::rules([
     //退出登录
     'logout' => 'admin/Login/logout',
     //用户列表
-    'userlst' => 'admin/User/lst',
+//    'userlst' => 'admin/User/lst',
     //扫描列表
-    'scanlst' => 'admin/Scan/lst',
+//    'scanlst' => 'admin/Scan/lst',
     //创建二维码
     'createcode' => 'admin/Code/create',
     //二维码列表
-    'codelst' => 'admin/Code/lst',
+//    'codelst' => 'admin/Code/lst',
     //删除二维码
     'delcode' => 'admin/Code/del',
     //批量下载
-    'downloadcode' => 'admin/Code/downloadCode',
+    'downLoadCode' => 'admin/Code/downLoadCode',
     //创建二维码组
     'creategroup' => 'admin/Group/create',
     //二维码组列表
-    'grouplst' => 'admin/Group/lst',
+//    'grouplst' => 'admin/Group/lst',
     //删除二维码组
     'delgroup' => 'admin/group/del',
 ],'GET');

@@ -1,0 +1,69 @@
+<!-- 模板 -->
+
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs12">
+            <div class="layui-card">
+                <div class="layui-card-header">用户列表</div>
+                <div class="layui-card-body">
+                    <table id="customer"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 脚本 -->
+
+<script>
+    layui.use(['form','table'], function() {
+        var form = layui.form,
+            $ = layui.jquery;
+        table = layui.table;
+        form.render();
+
+        //渲染客户列表
+        table.render({
+            elem: '#customer'
+            ,height: 'full-200'
+            ,url: '/manager/Customer/CustomerList/' //数据接口
+            ,page: true //开启分页
+            ,size:'sm'
+            ,cols: [[ //表头
+                {field: 'u_id', title: 'ID', width:120, sort: true, fixed: 'left'}
+                ,{field: 'u_names', title: '用户姓名', width:120,fixed: 'left'}
+                ,{field: 'sex', title: '性别', width:80, sort: true}
+                ,{field: 'u_email', title: '邮箱', width:180}
+                ,{field: 'u_phone', title: '手机', width: 180}
+                ,{field: 'u_stars', title: '客户评级', width: 150, sort: true}
+                ,{field: 'u_intermediary', title: '是否签中介', width: 80, sort: true}
+                ,{field: 'u_total_fee', title: '消费总额'}
+            ]]
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function(data) {
+            console.log(data.field);
+            $.post('/api/submitForm', data.field, function(res) {
+                console.log(res);
+                layer.msg(res.success ? res.msg : '提交失败.');
+            }, 'json');
+            return false;
+        });
+    });
+</script>
+<!-- 样式 -->
+<style scoped>
+    .module-item{
+        height:40px;
+        line-height: 40px;
+        position: relative;
+    }
+    .module-item:before {
+        height:20px;
+        position: absolute;
+        top:10px;
+        left:10px;
+        width:5px;
+        background-color:dodgerblue;
+    }
+</style>

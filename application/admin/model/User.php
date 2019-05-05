@@ -13,10 +13,9 @@ use think\Model;
 
 class User extends Model
 {
-    //显示关注的用户，每页3条
-    public static function urlLst()
+    public static function urlLst($start, $limit)
     {
-        $user = self::where('status','=','1')->paginate(3);
+        $user = self::where('status','=','1')->limit($start,$limit)->select();
         return $user;
     }
 

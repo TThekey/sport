@@ -11,9 +11,12 @@ use think\Model;
 
 class Scan extends Model
 {
-    public static function getScanLst($openid)
+    public static function getScanLst($openid,$start,$limit)
     {
-        $scan = self::where('openid',$openid)->paginate(5,false,['query' => request()->param()]);
+        $scan = self::where('openid',$openid)->limit($start,$limit)->select();
+        foreach ($scan as $v){
+            $v['scandate'] = date("Y-m-d H:i:s",$v['scandate']);
+        }
         return $scan;
     }
 
